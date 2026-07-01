@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tri Chat Window</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="toolbar">
+      <form id="promptForm" class="compose">
+        <input id="prompt" type="text" placeholder="输入一次，同时发送到三个模型">
+        <label class="toggle">
+          <input id="autoSubmit" type="checkbox" checked>
+          <span>自动发送</span>
+        </label>
+        <button type="submit">发送</button>
+      </form>
+
+      <div class="panes">
+        <section class="pane-head" data-key="chatgpt">
+          <label><input type="checkbox" checked> ChatGPT</label>
+          <nav>
+            <button type="button" data-action="back" title="返回">‹</button>
+            <button type="button" data-action="reload" title="刷新">↻</button>
+            <button type="button" data-action="home" title="首页">⌂</button>
+          </nav>
+        </section>
+        <section class="pane-head" data-key="gemini">
+          <label><input type="checkbox" checked> Gemini</label>
+          <nav>
+            <button type="button" data-action="back" title="返回">‹</button>
+            <button type="button" data-action="reload" title="刷新">↻</button>
+            <button type="button" data-action="home" title="首页">⌂</button>
+          </nav>
+        </section>
+        <section class="pane-head" data-key="claude">
+          <label><input type="checkbox" checked> Claude</label>
+          <nav>
+            <button type="button" data-action="back" title="返回">‹</button>
+            <button type="button" data-action="reload" title="刷新">↻</button>
+            <button type="button" data-action="home" title="首页">⌂</button>
+          </nav>
+        </section>
+      </div>
+      <p id="status" role="status" aria-live="polite"></p>
+    </header>
+    <script src="renderer.js"></script>
+  </body>
+</html>
