@@ -1,0 +1,13 @@
+{
+  "name": "tri-chat-window",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A three-pane desktop window for ChatGPT, Gemini, and Claude.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^31.7.7"
+  }
+}
