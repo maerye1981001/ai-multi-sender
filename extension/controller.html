@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Multi Sender Workbench</title>
+    <link rel="stylesheet" href="controller.css">
+  </head>
+  <body>
+    <main class="workbench">
+      <header class="topbar">
+        <h1>AI 工作台</h1>
+        <div id="roles" class="roles" aria-label="模型角色"></div>
+        <button id="addModel" class="secondary" type="button">新增模型</button>
+        <button id="arrange" class="secondary" type="button">重排窗口</button>
+      </header>
+
+      <section class="compose">
+        <textarea id="prompt" rows="3" placeholder="输入问题；设为“回答”的模型会先回答，设为“裁判”的模型可汇总判断"></textarea>
+        <div class="side">
+          <label class="auto">
+            <input id="autoSubmit" type="checkbox" checked>
+            <span>自动发送</span>
+          </label>
+          <button id="send" class="primary" type="button">发送</button>
+          <button id="judge" class="secondary" type="button">裁判总结</button>
+        </div>
+      </section>
+
+      <footer>
+        <p id="message" role="status" aria-live="polite">正在准备工作台...</p>
+      </footer>
+    </main>
+
+    <dialog id="modelDialog">
+      <form id="modelForm" method="dialog" class="model-form">
+        <h2 id="modelDialogTitle">新增模型</h2>
+        <label>
+          <span>名称</span>
+          <input id="modelName" type="text" placeholder="例如 Perplexity">
+        </label>
+        <label>
+          <span>网址</span>
+          <input id="modelUrl" type="url" placeholder="https://example.com/">
+        </label>
+        <menu>
+          <button id="cancelModel" value="cancel" type="button">取消</button>
+          <button id="saveModel" value="default" type="submit">保存</button>
+        </menu>
+      </form>
+    </dialog>
+    <script src="controller.js"></script>
+  </body>
+</html>
