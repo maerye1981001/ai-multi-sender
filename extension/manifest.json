@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "AI Multi Sender",
+  "description": "Send one prompt to ChatGPT, Gemini, and Claude tabs at the same time.",
+  "version": "0.1.0",
+  "action": {
+    "default_title": "AI Multi Sender",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://gemini.google.com/*",
+        "https://claude.ai/*"
+      ],
+      "js": [
+        "contentScript.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
