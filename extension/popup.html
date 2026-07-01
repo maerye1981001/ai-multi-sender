@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Multi Sender</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <h1>AI Multi Sender</h1>
+        <button id="refreshTabs" class="icon-button" type="button" title="刷新标签页" aria-label="刷新标签页">
+          <span aria-hidden="true">↻</span>
+        </button>
+      </header>
+
+      <section class="targets" aria-label="目标标签页">
+        <label class="target">
+          <input id="target-chatgpt" type="checkbox" checked>
+          <span>ChatGPT</span>
+          <strong id="status-chatgpt">查找中</strong>
+        </label>
+        <label class="target">
+          <input id="target-gemini" type="checkbox" checked>
+          <span>Gemini</span>
+          <strong id="status-gemini">查找中</strong>
+        </label>
+        <label class="target">
+          <input id="target-claude" type="checkbox" checked>
+          <span>Claude</span>
+          <strong id="status-claude">查找中</strong>
+        </label>
+      </section>
+
+      <textarea id="prompt" rows="8" placeholder="输入要同时发送的消息"></textarea>
+
+      <div class="options">
+        <label>
+          <input id="autoSubmit" type="checkbox" checked>
+          <span>填入后自动发送</span>
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="openMissing" class="secondary" type="button">打开缺少的页面</button>
+        <button id="send" class="primary" type="button">发送</button>
+      </div>
+
+      <button id="openWorkbench" class="wide" type="button">打开工作台</button>
+
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
